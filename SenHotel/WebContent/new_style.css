@@ -1,0 +1,23 @@
+*{color : #00004d;}
+#btn_yes:HOVER {background-color : olive; color: white;}
+#btn_no:HOVER {background-color : maroon; color: white;}
+#center	 { text-align: center;}
+body 	 { width: 1280px; margin: 0 auto; }
+li:HOVER { text-indent: 0.2%; color: red; }
+li 		 { list-style-type: circle;}
+.red	 {color: red;}
+#table	 { width: 25% ; text-align: center;}
+#table_c {width: 30% ; text-align: center;}
+#sadly {
+	 animation-name: right_left;
+     animation-duration: 6s;
+     position: absolute; 
+     }
+@keyframes right_left {
+    from {
+    	/*margin-left : 25em;*/
+    	transform:rotate(0deg);}
+    to {
+    	transform:rotate(90deg);
+    	}
+}

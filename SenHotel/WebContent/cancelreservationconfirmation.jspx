@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=UTF-8" 
+		pageEncoding="UTF-8" session="false"/>
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		omit-xml-declaration="true" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type= "text/css" href = "new_style.css" />
+<title>**CONFIRMATION**</title>
+</head>
+<body>
+<jsp:include page = "senhotelmenu.jspx" />
+<h1>Cancel Reservation</h1>
+<p><em style="text-decoration: underline">following hotel room is to be canceled..</em></p>
+<table id="table">
+	<tr>
+		<th>--Hotel--</th>
+		<th>--Room NO--</th>
+	</tr>
+	<tr>
+		<td>${confirm_reserv.hotelName}</td>
+		<td>${confirm_reserv.roomNo}</td>
+	</tr>
+</table>
+<p>Are you sure you would like to <span class="red">cancel</span> this reservation?</p>
+<form action="cancelreservationconfirmation.jspx" method="post">
+<input type="hidden" name="hotel_id" value="${confirm_reserv.hotelId}" />
+<input type="hidden" name="room_no" value="${confirm_reserv.roomNo}" />
+<table>
+	<tr>
+		<td><input id="btn_yes" type="submit" name="confirm" value="Confirm" /></td>
+		<td><input id="btn_no" type="submit" name="abort" value="Abort" /></td>
+	</tr>
+</table>
+<p></p>
+</form>
+</body>
+</html>
+</jsp:root>

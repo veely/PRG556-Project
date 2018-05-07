@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Written by Vincent Ly -->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+   xmlns:c="http://java.sun.com/jsp/jstl/core"
+   xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+   version="2.0">
+    <jsp:directive.page language="java"
+        contentType="application/xhtml+xml; charset=UTF-8" pageEncoding="UTF-8" />
+    <jsp:output omit-xml-declaration="no" 
+        doctype-root-element="html" 
+        doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+        doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type= "text/css" href = "new_style.css" />
+<title>Reserve Room</title>
+</head>
+<body>
+
+
+<jsp:include page="senhotelmenu.jspx" />
+
+
+<table border="1">
+<tr>
+<th>Floor</th>
+<c:forEach begin="1" end="${hotel.roomsPerFloor}" var="unit"><th>Unit ${unit}</th></c:forEach>
+</tr>
+<c:forEach var="i" begin="0" end="${fn:length(resarray) - 1}" varStatus="status1">
+	<tr>
+	<td>${fn:length(resarray) - i}</td>
+	<c:forEach var="unit"  items="${resarray[fn:length(resarray) -1 - i]}" varStatus="status2">
+	<td>
+	<c:choose>
+		<c:when test="${unit eq null}">
+					<form action="reserveroom.jspx" method="post">
+						<div>
+						<input type="submit" name="Submit" value="${(hotel.floors - status1.count+1) * 100 + status2.index + 1}"/>
+						<input type="hidden" name="hotel_id" value="${hotel.getId()}"/>
+						<input type="hidden" name="floor" value="${hotel.getFloors() - status1.count + 1}"/>
+						<input type="hidden" name="unit" value="${status2.count}"/>
+						</div>
+					</form>
+		</c:when>
+		<c:otherwise>
+			X
+		</c:otherwise>
+	</c:choose>
+	</td>
+	</c:forEach>
+	</tr>
+</c:forEach>
+</table>
+</body>
+</html>
+</jsp:root>

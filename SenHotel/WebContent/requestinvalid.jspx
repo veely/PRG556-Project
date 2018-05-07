@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- by Milan K. --> 
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page language="java"
+        contentType="application/xhtml+xml; charset=UTF-8" pageEncoding="UTF-8" />
+    <jsp:output omit-xml-declaration="no" 
+        doctype-root-element="html" 
+        doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+        doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type= "text/css" href = "new_style.css" />
+<title>Invalid_Request</title>
+</head>
+<body>
+<h1 id="center"><strong>Sorry</strong><span id="sadly">=(</span></h1>
+<h2><em>Unfortunately we can't proceed your request. Please try again. </em></h2>
+<p>${requestScope['javax.servlet.error.message']}</p>
+<p><a href =".">...to context root</a></p>
+</body>
+</html>
+</jsp:root>

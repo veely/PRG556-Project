@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd" >
+<properties>
+	<comment>Control Filter Mappings</comment>
+	<entry key="/availablehotels.jspx">com.senhotel.project.AvailableHotelsControl</entry>
+	<entry key="/welcome.jspx">com.senhotel.project.WelcomeControl</entry>
+	<entry key="/logout.jspx">com.senhotel.project.LogoutControl</entry>
+	<entry key="/cancelreservationconfirmation.jspx">com.senhotel.project.CancelReservationConfirmationControl</entry>
+	<entry key="/reserveroom.jspx">com.senhotel.project.ReserveRoomControl</entry>
+	<entry key="/reservations.jspx">com.senhotel.project.ReservationsControl</entry>
+</properties>

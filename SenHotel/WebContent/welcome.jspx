@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Written by Vincent Ly -->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+   xmlns:c="http://java.sun.com/jsp/jstl/core"
+   xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+   version="2.0">
+    <jsp:directive.page language="java"
+        contentType="application/xhtml+xml; charset=UTF-8" pageEncoding="UTF-8" />
+    <jsp:output omit-xml-declaration="no" 
+        doctype-root-element="html" 
+        doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+        doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
+        
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type= "text/css" href = "new_style.css" />
+<title>Login</title>
+</head>
+<body>
+<h1>Welcome to SenHotel Reservation System!</h1>
+<form action="welcome.jspx" method="post">
+<p>
+<c:choose>
+<c:when test="${invalid}">Invalid login information. Please try again.</c:when>
+<c:otherwise>Please log into your account.</c:otherwise>
+</c:choose>
+</p>
+<div>
+Username: <input type="text" name="username" id="username"/><br/>
+Password: <input type="password" name="password" id="password"/><br/>
+<input type="submit" name="login" value="Login"/>
+</div>
+</form>
+
+</body>
+</html>
+</jsp:root>
